@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- CDN(Vue.jsが用意してくれるサーバー)から読み込み -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+   
+  <!-- Vue.jsでコントロールする宣言 -->
+  <div id="app1">
+    <!-- {{}} で囲まれたデータは変数のように展開される-->
+    app1 {{ message}}
+   </div>
+
+  <!-- 具体的にどうコントロールして行くか -->
+   <script>
+     const App1 = {
+      //  Vue.jsに対して以下のデータを返す宣言
+       data() {
+         return {
+           message: "Hello!"
+         }
+       }
+     }
+
+     app1 = Vue.createApp(App1)
+     app1.mount('#app1')  //.mountでどの部分をVue.jsでコントロールしたいかを指定
+   </script>
+  </body>
+</html>
